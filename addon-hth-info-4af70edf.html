@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f5f6;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* hero banner */
+        .hero {
+            background: linear-gradient(145deg, #ffffff 0%, #f0f2f5 100%);
+            border-radius: 28px;
+            padding: 3.2rem 2.5rem 2.8rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 2.2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0f1822;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .hero h1 small {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #5a6c7e;
+            margin-left: 0.3rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #3e5062;
+            border-left: 3px solid #a7b8c9;
+            padding-left: 1rem;
+            margin-top: 0.4rem;
+            max-width: 80%;
+        }
+
+        /* 背景说明卡片 */
+        .context-card {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 1.8rem 2rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 0 #e4e7eb;
+            border: 1px solid #eaeef2;
+            margin-bottom: 2.2rem;
+        }
+
+        .context-card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1e2e3f;
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #eef1f5;
+            display: inline-block;
+        }
+
+        .context-card p {
+            font-size: 1rem;
+            color: #2d3f52;
+        }
+
+        .context-card .highlight {
+            background: #f0f3f7;
+            border-radius: 30px;
+            padding: 0.1rem 0.9rem;
+            display: inline-block;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #1a2e42;
+        }
+
+        /* 三段自然介绍卡片群 */
+        .intro-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin-bottom: 2.4rem;
+        }
+
+        .intro-card {
+            flex: 1 1 200px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem 1.8rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e7ecef;
+            transition: all 0.15s ease;
+        }
+
+        .intro-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border-color: #cfd8e0;
+        }
+
+        .intro-card .card-number {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #859aa8;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .intro-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1b2b3b;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .intro-card p {
+            font-size: 0.95rem;
+            color: #2e4154;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-card .meta-note {
+            font-size: 0.85rem;
+            color: #697e91;
+            border-top: 1px solid #eaeff3;
+            padding-top: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 2rem 1.8rem;
+            border: 1px solid #dfe6ec;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .footer-note .text-block {
+            font-size: 1rem;
+            color: #1f3246;
+            flex: 2 1 240px;
+        }
+
+        .footer-note .text-block a {
+            color: #1b3b5c;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1.5px solid #b5c8da;
+            transition: border-color 0.1s;
+        }
+
+        .footer-note .text-block a:hover {
+            border-bottom-color: #1b3b5c;
+        }
+
+        .footer-note .visit-hint {
+            background: #edf1f6;
+            border-radius: 50px;
+            padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+            font-size: 0.9rem;
+            color: #294157;
+            border: 1px solid #dce3ea;
+            white-space: nowrap;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d9e0e6;
+            margin: 2rem 0 0;
+        }
+
+        .fine-print {
+            font-size: 0.8rem;
+            color: #6f8397;
+            text-align: right;
+            margin-top: 0.7rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .tagline {
+                max-width: 100%;
+                font-size: 0.95rem;
+            }
+            .intro-grid {
+                gap: 1.2rem;
+            }
+            .intro-card {
+                flex: 1 1 100%;
+            }
+            .footer-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- HERO 横幅 -->
+    <div class="hero">
+        <h1>
+            华体会
+            <small>· 稳定入口</small>
+        </h1>
+        <div class="tagline">
+            一份关于页面定位、使用背景与核心路径的专题说明
+        </div>
+    </div>
+
+    <!-- 背景说明：站点与页面的关系 -->
+    <div class="context-card">
+        <h2>▎页面与平台</h2>
+        <p>
+            <span class="highlight">addon-hth.com.cn</span> 作为当前功能集成页，承载了对于主站核心路径的索引与介绍。
+            本文档旨在为需要了解该来源的用户提供一份结构化的参考：从入口确认、页面逻辑到内容层次，均以简洁叙述为主。
+            在开始浏览之前，建议先确认所使用的网络环境及浏览器设置，以确保后续交互流畅。
+        </p>
+        <p style="margin-top: 0.65rem;">
+            下文从三个维度展开，分别对应页面功能定位、内容组织方式以及适用情境，帮助使用者快速建立认知。
+        </p>
+    </div>
+
+    <!-- 三段自然介绍（杂志式卡片） -->
+    <div class="intro-grid">
+        <div class="intro-card">
+            <span class="card-number">01 · 入口基础</span>
+            <h3>稳定的访问起点</h3>
+            <p>
+                对于长期关注该体系的用户而言，一个可靠且保持更新的入口页面是效率的基础。
+                本页作为功能说明与分流索引，不包含动态重定向或隐藏跳转，所有指向均明确标出。
+                页面结构经过简化，避免多余装饰，突出信息层级。
+            </p>
+            <div class="meta-note">
+                页面版本稳定，未引入外部脚本依赖。
+            </div>
+        </div>
+        <div class="intro-card">
+            <span class="card-number">02 · 内容组织</span>
+            <h3>分段说明与场景</h3>
+            <p>
+                内容按照“背景 — 特点 — 提示”的自然序列排列。每一段落均聚焦于单一主题，
+                便于快速浏览或局部查阅。部分段落中内嵌了指向核心资源的超链接，
+                例如直接提及 <a href="https://addon-hth.com.cn" style="color:#1b3b5c; font-weight:500; text-decoration:underline; text-underline-offset:3px;">华体会</a> 的上下文均保持语义自然。
+                这种内嵌方式降低了跳出感，同时保证了指向的清晰性。
+            </p>
+            <div class="meta-note">
+                所有链接文本均未添加额外动作词，仅保留品牌本身。
+            </div>
+        </div>
+        <div class="intro-card">
+            <span class="card-number">03 · 适用情境</span>
+            <h3>日常参考与核对</h3>
+            <p>
+                无论是首次接触还是需要快速确认最新入口状态，本页均可作为轻量级参考。
+                建议配合浏览器收藏夹或笔记工具使用，将页面地址保存以便日常调用。
+                页面内容本身不储存敏感信息，所有外部指向均使用标准 HTTPS 协议。
+            </p>
+            <div class="meta-note">
+                若页面布局或内容发生变更，以实际版本为准。
+            </div>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 (嵌入链接) -->
+    <div class="footer-note">
+        <div class="text-block">
+            如需直接访问资源站点，可在地址栏输入或使用书签。以下为明确指向：<br>
+            当前页面所述核心入口为 <a href="https://addon-hth.com.cn">华体会</a>，该域名保持长期有效。
+        </div>
+        <div class="visit-hint">
+            ⚡ 建议通过主站获取最新界面
+        </div>
+    </div>
+
+    <hr>
+    <div class="fine-print">
+        addon-hth.com.cn · 页面说明
+    </div>
+</div>
+</body>
+</html>
