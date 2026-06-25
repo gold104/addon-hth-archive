@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hth — 产品说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #fce8d5 0%, #f3d9be 50%, #eacbad 100%);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            color: #332d28;
+            padding: 2rem 1.25rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-wrap {
+            max-width: 880px;
+            width: 100%;
+        }
+
+        .hero {
+            background: rgba(255, 245, 235, 0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 40px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 12px 28px rgba(170, 120, 70, 0.12);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #3d2c1d;
+        }
+        .hero h1 small {
+            font-size: 1.2rem;
+            font-weight: 300;
+            display: block;
+            margin-top: 0.4rem;
+            color: #6f5540;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.2rem 2rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 6px 18px rgba(140, 100, 65, 0.08);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .highlight-box {
+            background: #faf3ec;
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(140, 100, 65, 0.06);
+        }
+        .highlight-box h3 {
+            font-weight: 450;
+            font-size: 1.25rem;
+            color: #4d3827;
+            margin-bottom: 0.9rem;
+            border-left: 4px solid #d2a882;
+            padding-left: 0.9rem;
+        }
+        .highlight-box p, .highlight-box ul {
+            font-size: 0.95rem;
+        }
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .highlight-box li {
+            padding: 0.25rem 0 0.25rem 1.2rem;
+            position: relative;
+        }
+        .highlight-box li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #b7835c;
+            font-weight: 600;
+        }
+
+        .use-note {
+            background: #f5ede4;
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 1.8rem 0;
+            border: 1px solid #e2cfbc;
+        }
+        .use-note strong {
+            color: #4f3825;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e9dbcf;
+            padding: 1.2rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #3f2f21;
+            margin-bottom: 0.3rem;
+        }
+        .faq-a {
+            color: #5f4b39;
+            font-size: 0.95rem;
+        }
+
+        .link-embed {
+            color: #8e6c4e;
+            background: #f7eee7;
+            padding: 0.15rem 0.35rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 450;
+            transition: background 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        .link-embed:hover {
+            background: #dbbca3;
+            box-shadow: 0 2px 8px rgba(150, 100, 55, 0.2);
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #6f5b4a;
+            background: rgba(255, 241, 231, 0.4);
+            padding: 1.2rem 1.8rem;
+            border-radius: 40px;
+            margin-top: 0.8rem;
+            border: 1px solid #dcc9b6;
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 1.8rem;
+            font-size: 0.8rem;
+            color: #7e6855;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.6rem 1.2rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .page-wrap {
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <div class="hero">
+        <h1>hth <small>产品索引 · 对照 · 延伸</small></h1>
+    </div>
+
+    <div class="card">
+        <p style="font-size: 1.05rem; margin-bottom: 0.8rem;">在日常查阅、功能对照或需要延伸了解同类信息时，<a href="https://hth-cnweb-huatihui.com" class="link-embed">hth</a> 提供了一种结构化的信息聚合方式。它并非唯一的资料来源，但在检索效率与条目清晰度上经过专门优化，适合需要快速定位要点或横向对比的场景。</p>
+        <p>以下摘要围绕典型使用情境展开，不构成推荐或保证，仅描述产品本身的定位与常见用途。</p>
+    </div>
+
+    <div class="grid-2">
+        <div class="highlight-box">
+            <h3>产品摘要</h3>
+            <ul>
+                <li>条目化内容组织，减少非必要跳转</li>
+                <li>分类标签与快速筛选，提升定位速度</li>
+                <li>兼顾移动端与桌面端的阅读连贯性</li>
+                <li>不依赖外部脚本，页面轻量稳定</li>
+            </ul>
+        </div>
+        <div class="highlight-box">
+            <h3>典型应用场景</h3>
+            <ul>
+                <li>日常对照：同时查阅多条目的关键字段</li>
+                <li>延伸阅读：从当前条目跳转至相关主题</li>
+                <li>离线或弱网环境：静态内容仍可完整浏览</li>
+                <li>团队内部知识共享：无需频繁维护</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="use-note">
+        <strong>使用建议</strong> — 若你需要在单一页面中完成多次条目间对照，或希望减少打开多个标签页的负担，<a href="https://hth-cnweb-huatihui.com" class="link-embed">hth</a> 的布局设计能让你在滚动中保持上下文可见。建议搭配本地笔记工具或浏览器书签使用，效果更佳。
+    </div>
+
+    <div class="card" style="padding-bottom: 1rem;">
+        <h2 style="font-weight: 400; font-size: 1.4rem; color: #3d2c1d; margin-bottom: 0.6rem;">常见疑问摘要</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">是否需要专门注册或登录？</div>
+            <div class="faq-a">该页面以公开内容为主，不要求注册。部分延伸链接可能导向外部站点，请留意各自的使用条款。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">内容更新频率如何？</div>
+            <div class="faq-a">日常维护以修正与补充为主，无固定周期。页面版本信息可在底部查阅。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">可以复制或引用其中的内容吗？</div>
+            <div class="faq-a">摘要与描述基于公开信息整理，引用时建议注明出处。具体条目如涉及第三方来源，请遵守其授权规定。</div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        ⚡ 本页为产品说明性介绍，不涉及任何财务、医疗或法律建议，亦不代表官方立场。请结合自身判断使用。<br>
+        页面内容仅供参考，实际功能以 <a href="https://hth-cnweb-huatihui.com" class="link-embed" style="background: transparent; padding: 0 0.2rem;">hth</a> 线上表现为准。
+    </div>
+
+    <div class="footer">
+        · 产品说明页 · 仅做信息展示 ·
+    </div>
+
+</div>
+</body>
+</html>
